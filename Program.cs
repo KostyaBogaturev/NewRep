@@ -17,7 +17,12 @@ namespace QE
             indexB = double.Parse(Console.ReadLine());
             Console.Write("Enter index C: ");
             indexC = double.Parse(Console.ReadLine());
-            Console.WriteLine($"{indexA}x^2+{indexB}x+{indexC}=0");
+            Console.WriteLine($"{indexA}x^2 + {indexB}x + {indexC} = 0");
+            double discriminant = indexB * indexB - 4 * indexA * indexC;
+            double firstValue, secondValue;
+            firstValue = (-indexB - Math.Sqrt(discriminant)) / (2 * indexA);
+            secondValue = (-indexB + Math.Sqrt(discriminant)) / (2 * indexA);
+            Console.WriteLine($"x1= {firstValue} ,x2= {secondValue}");
             Console.Read();
         }
     }
