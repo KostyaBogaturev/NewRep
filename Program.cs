@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Library;
 
 namespace QE
 {
@@ -20,12 +21,9 @@ namespace QE
                 Console.Write("Enter index C: ");
                 Validation(out indexC);
                 Console.WriteLine($"{indexA}x^2 + {indexB}x + {indexC} = 0");
-                double discriminant = indexB * indexB - 4 * indexA * indexC;
-                if (discriminant >= 0)
+                if (SolutionEquation.GetDiscriminant(indexA, indexB,  indexC, out double discriminant))
                 {
-                    double firstValue, secondValue;
-                    firstValue = (-indexB - Math.Sqrt(discriminant)) / (2 * indexA);
-                    secondValue = (-indexB + Math.Sqrt(discriminant)) / (2 * indexA);
+                    SolutionEquation.GetX(indexB, indexA, discriminant, out double firstValue, out double secondValue);
                     Console.WriteLine($"x1= {firstValue} ,x2= {secondValue}");
                 }
                 else
