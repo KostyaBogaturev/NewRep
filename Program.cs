@@ -21,7 +21,7 @@ namespace QE
                 Console.Write("Enter index C: ");
                 Validation(out indexC);
                 Console.WriteLine($"{indexA}x^2 + {indexB}x + {indexC} = 0");
-                if (SolutionEquation.GetDiscriminant(indexA, indexB,  indexC, out double discriminant))
+                if (SolutionEquation.GetDiscriminant(indexA, indexB, indexC, out double discriminant))
                 {
                     SolutionEquation.GetX(indexB, indexA, discriminant, out double firstValue, out double secondValue);
                     Console.WriteLine($"x1= {firstValue} ,x2= {secondValue}");
