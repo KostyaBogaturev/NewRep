@@ -14,11 +14,11 @@ namespace QE
             while (true)
             {
                 Console.Write("Enter index A: ");
-                indexA = double.Parse(Console.ReadLine());
+                Validation(out indexA);
                 Console.Write("Enter index B: ");
-                indexB = double.Parse(Console.ReadLine());
+                Validation(out indexB);
                 Console.Write("Enter index C: ");
-                indexC = double.Parse(Console.ReadLine());
+                Validation(out indexC);
                 Console.WriteLine($"{indexA}x^2 + {indexB}x + {indexC} = 0");
                 double discriminant = indexB * indexB - 4 * indexA * indexC;
                 if (discriminant >= 0)
@@ -41,7 +41,18 @@ namespace QE
                         Console.Clear();
                         break;
                 }
+
             }
+        }
+         private static double Validation(out double index)
+        {
+            string strIndex = Console.ReadLine();
+            while (!double.TryParse(strIndex, out index))
+            {
+                Console.WriteLine("Try again !");
+                strIndex=Console.ReadLine();
+            }
+            return index;
         }
     }
 }
