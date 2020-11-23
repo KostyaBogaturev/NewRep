@@ -10,6 +10,15 @@ namespace QE
     {
         static void Main(string[] args)
         {
+            double indexA, indexB, indexC;
+            Console.Write("Enter index A: ");
+            indexA = double.Parse(Console.ReadLine());
+            Console.Write("Enter index B: ");
+            indexB = double.Parse(Console.ReadLine());
+            Console.Write("Enter index C: ");
+            indexC = double.Parse(Console.ReadLine());
+            Console.WriteLine($"{indexA}x^2+{indexB}x+{indexC}=0");
+            Console.Read();
         }
     }
 }
