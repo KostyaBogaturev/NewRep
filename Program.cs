@@ -21,10 +21,17 @@ namespace QE
                 indexC = double.Parse(Console.ReadLine());
                 Console.WriteLine($"{indexA}x^2 + {indexB}x + {indexC} = 0");
                 double discriminant = indexB * indexB - 4 * indexA * indexC;
-                double firstValue, secondValue;
-                firstValue = (-indexB - Math.Sqrt(discriminant)) / (2 * indexA);
-                secondValue = (-indexB + Math.Sqrt(discriminant)) / (2 * indexA);
-                Console.WriteLine($"x1= {firstValue} ,x2= {secondValue}");
+                if (discriminant >= 0)
+                {
+                    double firstValue, secondValue;
+                    firstValue = (-indexB - Math.Sqrt(discriminant)) / (2 * indexA);
+                    secondValue = (-indexB + Math.Sqrt(discriminant)) / (2 * indexA);
+                    Console.WriteLine($"x1= {firstValue} ,x2= {secondValue}");
+                }
+                else
+                {
+                    Console.WriteLine($"Discriminant = {discriminant}<0");
+                }
                 Console.WriteLine("Enter '1' to close app");
                 switch (Console.ReadLine())
                 {
